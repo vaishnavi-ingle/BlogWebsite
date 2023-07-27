@@ -1,0 +1,46 @@
+.Create {
+  width: 50%;
+  height: 33rem;
+  margin: auto;
+  /* background-color: #f8f7ff; */
+  border: none;
+  box-shadow:rgba(red, green, blue, alpha);
+  padding-bottom: 1rem;
+}
+
+.desc {
+  padding-bottom: 9rem;
+  border: none;
+  background-color: #e9ecef;
+  border-radius: 0;
+
+}
+
+.progress {
+  margin: 1rem 0;
+}
+
+.image input{
+  left: 0;
+}
+
+.title {
+  border: none;
+  border-radius: 0;
+  margin-top: -20px;
+}
+
+label{
+    margin-right: 100%;
+    margin-top: 15px;    
+    font-size: 1.3rem;
+}
+
+.publish{
+  border: none;
+  background-color: #006DFC;
+  color: white;
+  width: 30%;
+  margin-top: 2rem;
+  padding: 10px;
+}

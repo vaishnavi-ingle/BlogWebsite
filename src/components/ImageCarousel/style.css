@@ -1,0 +1,62 @@
+.carousel-container {
+  position: relative;
+  display: inline-block;
+  /* max-height: 25rem; */
+  width: 60%;
+  margin-bottom: 0;
+}
+
+.carousel-container-left {
+  width: 55%;
+  float: left;
+}
+
+.carousel-slide {
+  position: relative;
+  display: inline-block;
+}
+
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 25rem;
+  min-height: 24rem;
+}
+
+.carousel-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  /* max-width: 8rem; */
+}
+
+.read-full-article {
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.Carousel {
+  width: 100%;
+  max-width: 900px; /* Adjust this value based on your desired width */
+  margin: 0 auto;
+  margin-left: 0px;
+  /* Add any additional styles you need for the carousel container */
+}

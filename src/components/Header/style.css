@@ -1,0 +1,103 @@
+header {
+  background-color: #d6ccc2;
+  color: #2f3e46;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  height: 4em;
+  width: 100%;
+  margin-top: 0;
+  top: 0;
+}
+
+.nav-container2 {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container2 ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin-left: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.new-blog {
+  margin-right: 4rem;
+  margin-top: 0.5rem;
+}
+
+.list {
+  margin-top: 1rem;
+}
+
+nav li {
+  margin: 0 0;
+}
+nav a {
+  color: #2f3e46;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #a98467;
+}
+
+.centered-h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
+  background: linear-gradient(to right, #adc178, #f0ead2);
+}
+
+.nav-container {
+  margin-top: -3.5rem;
+  float: right;
+  margin-left: 30rem;
+}
+
+.home span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.home span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.home span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.home span {
+  opacity: 0; /* Start each word with 0 opacity to hide them */
+  animation: fadeIn 1s forwards; /* Apply the fadeIn animation to each word */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add animation delays to stagger the appearance of each word */
+.home span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.home span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.home span:nth-child(3) {
+  animation-delay: 0.8s;
+}

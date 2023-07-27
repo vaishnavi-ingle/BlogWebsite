@@ -1,0 +1,139 @@
+.blog-item {
+  /* margin-left: 10px; */
+  padding: 0 10px 10px 10px;
+  border: 1px none #ccc;
+  border-radius: 5px;
+  /* background-color: #f9f9f9; */
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  display:inline-block;
+}
+
+.special-blogs-container {
+  display: table-row;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.special-blog {
+  flex-basis: 22rem; /* Adjust this value to control the width of each special blog */
+  padding: 5px;
+  position: relative;
+}
+
+.special-blog-image {
+  width: 100%;
+  height: 12rem; /* Set the fixed height for the image */
+  object-fit: cover; /* Make sure the image covers the entire container */
+}
+
+.special-blog-title {
+  position: absolute;
+  bottom: -3px; /* Adjust this value to control the vertical position of the title */
+  left: 5px; /* Adjust this value to control the horizontal position of the title */
+  background: linear-gradient(to right, #efefbb, #d4d3dd);
+  color: #001219; /* Set the text color for the title */
+  padding: 5px 10px; /* Add padding to the title for better presentation */
+  font-size: 20px;
+}
+
+.blog-image {
+  width: 100%;
+  max-height: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.blog-title {
+  font-size: 24px;
+  font-weight: bold;
+  width: 15rem;
+  text-align: center;
+  margin: auto auto;
+  min-height: 3rem;
+}
+
+.blog-description {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.blog-date {
+  font-size: 14px;
+  color: #777;
+}
+
+.blog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.blog-actions a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.blog-actions a:hover {
+  color: #0056b3;
+}
+
+.hr-divider {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Custom styles for the three blogs in a row layout */
+.blog-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* width: 55rem; */
+  margin: 0 1rem;
+}
+
+.read-more {
+  text-decoration: none;
+  float: left;
+}
+
+link:active {
+  color: #dad7cd;
+}
+
+.edit {
+  float: right;
+  margin-top: 2px;
+  margin-right: -4rem;
+}
+
+.col-md-3.blog-item {
+  /* Add box shadow */
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+  /* Add styles for each category */
+  /* For example, you can set the background color, padding, font size, etc. */
+  /* display: inline-block; */
+  /* margin-right: 5px; */
+  padding: 5px 10px;
+  background-color: #ffccd5;
+  color: #333;
+  font-size: 14px;
+  border-radius: 4px;
+  float: left;
+  cursor: pointer;
+  width: 6rem;
+}
+
+.category:hover {
+  background-color: #e63946;
+  width: 100%;
+  transition: ease 1s;
+  color: wheat;
+}
