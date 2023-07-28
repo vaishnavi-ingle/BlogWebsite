@@ -10,7 +10,8 @@ import {
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { db } from "../../firebase-config";
+import './style.css'
 
 const Detail = () => {
   const { id } = useParams();
@@ -78,13 +79,13 @@ const Detail = () => {
   }
 
   return (
-    <div className="container border bg-light" style={{ marginTop: 70 }}>
+    <div className=" border bg-light" style={{ marginTop: 70 }}>
       <div className="row">
-        <div className="col-3">
+        <div className="image">
           <img
             src={article.imageUrl}
             alt={article.title}
-            style={{ width: "100%", padding: 10 }}
+            // style={{ width: "100%", padding: 10 }}
           />
         </div>
         <div className="col-9 mt-3">
