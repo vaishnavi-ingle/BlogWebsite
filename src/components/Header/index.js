@@ -3,9 +3,9 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-// import SearchBar from "../SearchBar"; 
+// import SearchBar from "../SearchBar";
 
-const Header = ({ active, setActive, user, handleLogOut,  }) => {
+const Header = ({ active, setActive, user, handleLogOut }) => {
   const userId = user?.uid;
   console.log("userId", userId);
   console.log("name", user?.displayName);
@@ -17,18 +17,17 @@ const Header = ({ active, setActive, user, handleLogOut,  }) => {
           <div className="nav-container2">
             <ul>
               <li className="list">
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className="list">
-                <a href="/">Trending</a>
+                <Link to="/trending">Trending</Link>
               </li>
               <li className="list">
-                <a href="/about">News</a>
+                <Link to="/news">News</Link>
               </li>
               <li className="list">
-                <a href="/contact">Bollywood</a>
+                <Link to="/bollywood">Bollywood</Link>
               </li>
-              {/* Add more navigation items here */}
             </ul>
           </div>
           {/* <div className="nav-container">
@@ -38,7 +37,9 @@ const Header = ({ active, setActive, user, handleLogOut,  }) => {
           <div className="nav-container">
             <Link to="/Create">
               <ul>
-                <li style={{paddingRight: "15px"}} className="new-blog">Create Blog</li>
+                <li style={{ paddingRight: "15px" }} className="new-blog">
+                  Create Blog
+                </li>
               </ul>
             </Link>
           </div>
@@ -66,7 +67,13 @@ const Header = ({ active, setActive, user, handleLogOut,  }) => {
                   <li
                     className="nav-item nav-link"
                     onClick={handleLogOut}
-                    style={{ cursor: "pointer", marginTop:"1px", fontSize: "1.1rem", paddingLeft: "10px", marginLeft: "10px" }}
+                    style={{
+                      cursor: "pointer",
+                      marginTop: "1px",
+                      fontSize: "1.1rem",
+                      paddingLeft: "10px",
+                      marginLeft: "10px",
+                    }}
                   >
                     Logout
                   </li>

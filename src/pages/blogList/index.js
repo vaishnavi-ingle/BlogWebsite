@@ -36,7 +36,6 @@ const BlogList = () => {
 
   return (
     <div style={{marginTop: "2.5rem"}}>
-      {/* Render the ImageCarousel here */}
       <ImageCarousel />
 
       {/* Render the first two blogs beside the ImageCarousel */}

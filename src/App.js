@@ -14,14 +14,15 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase-config";
 import { signOut } from "firebase/auth";
 import BlogList from "./pages/blogList";
-import DeleteArticle from './components/DeleteArticle'
+import DeleteArticle from "./components/DeleteArticle";
 import EditBlog from "./components/EditArticle";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 // import SearchResults from "./components/SearchBar/SearchResults";
+import CategoryPage from "./components/CategoryPage";
 
 function App() {
-  const [active, setActive] = useState('home')
-  const [user, setUser] = useState(null)
+  const [active, setActive] = useState("home");
+  const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
 
@@ -35,14 +36,14 @@ function App() {
     });
   }, []);
 
-  const handleLogOut = () =>{
-    signOut(auth).then(() =>{
+  const handleLogOut = () => {
+    signOut(auth).then(() => {
       setUser(null);
       setActive("login");
-      navigate('/auth')
-    })
-  }
-  
+      navigate("/auth");
+    });
+  };
+
   //  const handleSearch = (query) => {
   //   // Add the logic to handle the search here
   //   // For example, you can filter the articles based on the query
@@ -51,8 +52,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header setActive={setActive} active={active} user={user} handleLogOut={handleLogOut} />
-      <ToastContainer position="top-center"/>
+      <Header
+        setActive={setActive}
+        active={active}
+        user={user}
+        handleLogOut={handleLogOut}
+      />
+      <ToastContainer position="top-center" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
@@ -60,12 +66,27 @@ function App() {
         <Route path="/create" element={<AddEditBlog user={user} />} />
         <Route path="/update/:id" element={<AddEditBlog user={user} />} />
         <Route path="/about" element={<About />} />
-        <Route path="/auth" element={<AuthUser setUser={setUser} setActive={setActive} />}  />
-        <Route path="*" element={<NotFound/>} />
-        <Route path="/BlogList" element={<BlogList/>}/>
-        <Route path="/DeleteArticle" element={<DeleteArticle/>}/>
+        <Route
+          path="/auth"
+          element={<AuthUser setUser={setUser} setActive={setActive} />}
+        />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/BlogList" element={<BlogList />} />
+        <Route path="/DeleteArticle" element={<DeleteArticle />} />
         <Route path="/edit/:articleId" element={<EditBlog />} />
         <Route path="/Footer" element={<Footer />} />
+        <Route
+          path="/trending"
+          element={<CategoryPage category="trending" />}
+        />
+        <Route
+          path="/bollywood"
+          element={<CategoryPage category="bollywood" />}
+        />
+        <Route
+          path="/technology"
+          element={<CategoryPage category="technology" />}
+        />
         {/* <Route path="/search" element={<SearchResults />} /> */}
       </Routes>
     </div>

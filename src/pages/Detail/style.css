@@ -1,4 +1,70 @@
-.image{
-    margin: 10px 2rem;
-    width: 100%;
+.image {
+  margin: auto;
+  min-width: 55rem;
+  max-height: 15rem;
+}
+
+.title {
+  margin: 5rem 5rem 5px 20rem;
+}
+
+.row {
+  margin: auto auto;
+}
+
+.description {
+  margin: 5px -2rem 5px 12rem;
+  text-align: justify;
+}
+
+hr {
+  margin: 5px -2rem 5px 12rem;
+}
+
+h5,
+h3 {
+  margin: 5px -2rem 5px 12rem;
+}
+
+.date {
+  margin: 5px -2rem 5px 12rem;
+}
+
+form textarea {
+  border: none;
+  width: 25rem;
+  margin: 5px -3rem 5px 12rem;
+  height: 3rem;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.24);
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+button {
+  border: solid 3px #adc178;
+  border-radius: 55px;
+  padding: 10px 40px;
+  margin-left: 28rem;
+  display: list-item;
+}
+
+/* comments */
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px -3rem 5px 12rem;
+}
+
+.comment-content {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.comment-timestamp {
+  font-size: 12px;
+  color: #666;
 }
