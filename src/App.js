@@ -4,7 +4,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Detail from "./pages/Detail";
-import DetailCarousel from "./pages/DetailCarousel"; // Import the DetailCarousel component
 import AddEditBlog from "./pages/AddEditBlog";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -62,7 +61,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route exact path="/detailCarousel/:id" component={DetailCarousel} />
         <Route path="/create" element={<AddEditBlog user={user} />} />
         <Route path="/update/:id" element={<AddEditBlog user={user} />} />
         <Route path="/about" element={<About />} />

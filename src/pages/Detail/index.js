@@ -60,7 +60,7 @@ const Detail = () => {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const commentsData = snapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data(),
+        ...doc.data(), 
       }));
       setComments(commentsData);
     });
