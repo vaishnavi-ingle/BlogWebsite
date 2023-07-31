@@ -39,7 +39,7 @@
 .special-category:hover {
   background-color: #e63946;
   width: 100%;
-  transition: ease 1s;
+  transition: ease 0.5s;
   color: wheat;
 }
 .special-blog {
@@ -156,6 +156,7 @@ link:active {
   padding-bottom: 5px;
   padding-top: 8px;
   color: #777;
+  position: relative;
 }
 
 .col-md-3.blog-item {
@@ -233,6 +234,7 @@ link:active {
   height: 150px;
   object-fit: cover;
   min-width: 15rem;
+  max-width: 15rem;
 }
 
 .post-content {

@@ -60,7 +60,7 @@ const Detail = () => {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const commentsData = snapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data(), 
+        ...doc.data(),
       }));
       setComments(commentsData);
     });
@@ -93,6 +93,29 @@ const Detail = () => {
     return <div>Loading...</div>;
   }
 
+  const shareOnFacebook = () => {
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      window.location.href
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  // Function to share the article on WhatsApp
+  const shareOnWhatsApp = () => {
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      window.location.href
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  // Function to share the article on Twitter
+  const shareOnTwitter = () => {
+    const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      window.location.href
+    )}&text=${encodeURIComponent(article.title)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="container" style={{ width: "50rem" }}>
       <div className="row">
@@ -104,6 +127,18 @@ const Detail = () => {
               Posted on: {formatDate(article.createdAt)}
             </div>
           )}
+
+          <div className="social-share">
+            <button className="share-button facebook" onClick={shareOnFacebook}>
+              <i className="fab fa-facebook-f"></i>
+            </button>
+            <button className="share-button whatsapp" onClick={shareOnWhatsApp}>
+              <i className="fab fa-whatsapp"></i>
+            </button>
+            <button className="twitter share-button" onClick={shareOnTwitter}>
+              <i className="fab fa-twitter"></i>
+            </button>
+          </div>
           <div>
             <img className="image" src={article.imageUrl} alt={article.title} />
           </div>
@@ -132,7 +167,7 @@ const Detail = () => {
 
           <div className="comments-section">
             <p className="comment-count">{comments.length} Comments</p>
-<hr/>
+            <hr />
             {comments.map((comment) => (
               <div key={comment.id} className="comment">
                 {/* <p className="comment-title">Comment by: {comment.author}</p> */}
