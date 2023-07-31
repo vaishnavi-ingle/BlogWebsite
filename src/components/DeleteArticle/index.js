@@ -24,7 +24,10 @@ export default function DeleteArticle({ id, imageUrl }) {
           border: "none",
           background: "none",
           color: "#e63946",
-          marginRight: "1.7rem",
+          // marginLeft: "-7.7rem",
+          marginRight:"20rem",
+          marginTop: "1.4rem",
+        
         }}
         onClick={handleDelete}
       >

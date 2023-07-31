@@ -1,40 +1,17 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './style.css';
+import React from "react";
 
-const SearchBar = ({ handleSearchKey, clearSearch }) => {
-  const [searchKey, setSearchKey] = useState('');
-  const navigate = useNavigate();
-
-  const handleSearchChange = (e) => {
-    setSearchKey(e.target.value);
-    handleSearchKey(e.target.value);
-  };
-
-  const handleClear = () => {
-    setSearchKey('');
-    clearSearch();
-  };
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Redirect to the search results page with the search key as a query parameter (optional)
-    navigate(`/search?category=${encodeURIComponent(searchKey)}`);
+const SearchBar = ({ setSearchQuery }) => {
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
-    <div className='searchBar-wrap'>
-      <form onSubmit={handleSearchSubmit}>
-        <input
-          type='text'
-          onChange={handleSearchChange}
-          placeholder='Search By Category'
-          value={searchKey}
-        />
-        <button type='submit'>
-          <i className='gg-search'></i>
-        </button>
-      </form>
-      {searchKey && <span onClick={handleClear}>X</span>}
+    <div>
+      <input
+        type="text"
+        onChange={handleChange}
+        placeholder="Search by category..."
+      />
     </div>
   );
 };

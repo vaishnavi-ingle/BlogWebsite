@@ -1,6 +1,5 @@
-// ImageCarousel.js (Updated)
 import React, { useEffect, useState } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, orderBy, query, limit, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -11,32 +10,36 @@ const ImageCarousel = () => {
   const [carouselData, setCarouselData] = useState([]);
 
   useEffect(() => {
-    const carouselRef = collection(db, "Carousel");
-    const unsubscribe = onSnapshot(carouselRef, (snapshot) => {
+    const articleRef = collection(db, "Articles");
+    const q = query(articleRef, orderBy("createdAt", "desc"), limit(4));
+    onSnapshot(q, (snapshot) => {
       const carouselData = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setCarouselData(carouselData);
     });
-
-    return () => unsubscribe();
   }, []);
 
   return (
     <div className="carousel-container-left">
-      {/* <h2>Featured Blog Posts</h2> */}
-      <Carousel showThumbs={false} autoPlay interval={2000} className="Carousel">
+      <Carousel
+        showThumbs={false}
+        autoPlay
+        interval={5000}
+        className="Carousel"
+        infiniteLoop
+      >
         {carouselData.map((item) => (
-          <div key={item.blogPostId} className="carousel-slide">
-            <img src={item.imageUrl} alt={item.title} className="carousel-image" />
-            <div className="carousel-overlay">
-              <p className="carousel-title">{item.title}</p>
-              {/* <Link to={`/detailCarousel/${item.id}`} className="read-full-article">
-                Read Full Article →
-              </Link> */}
+          <Link className="special-read-more" to={`/detail/${item.id}`} key={item.id}>
+            <div className="carousel-slide">
+              <div className="carousel-category">{item.category}</div>
+              <img src={item.imageUrl} alt={item.title} className="carousel-image" />
+              <div className="carousel-overlay">
+                <p className="carousel-title">{item.title}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </Carousel>
     </div>

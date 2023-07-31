@@ -17,8 +17,8 @@ import BlogList from "./pages/blogList";
 import DeleteArticle from "./components/DeleteArticle";
 import EditBlog from "./components/EditArticle";
 import Footer from "./components/Footer";
+import TrendingCategory from "./pages/TrendingCategory";
 // import SearchResults from "./components/SearchBar/SearchResults";
-import CategoryPage from "./components/CategoryPage";
 
 function App() {
   const [active, setActive] = useState("home");
@@ -75,7 +75,9 @@ function App() {
         <Route path="/DeleteArticle" element={<DeleteArticle />} />
         <Route path="/edit/:articleId" element={<EditBlog />} />
         <Route path="/Footer" element={<Footer />} />
-        <Route
+        <Route path="/trending" component={TrendingCategory} />
+
+        {/* <Route
           path="/trending"
           element={<CategoryPage category="trending" />}
         />
@@ -86,7 +88,7 @@ function App() {
         <Route
           path="/technology"
           element={<CategoryPage category="technology" />}
-        />
+        /> */}
         {/* <Route path="/search" element={<SearchResults />} /> */}
       </Routes>
     </div>

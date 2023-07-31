@@ -20,6 +20,10 @@ const Detail = () => {
   const [newComment, setNewComment] = useState("");
 
   const formatDate = (timestamp) => {
+    if (!timestamp || !timestamp.toMillis) {
+      return "Invalid Date"; // Or any other default value
+    }
+
     const options = {
       year: "numeric",
       month: "long",
@@ -90,29 +94,32 @@ const Detail = () => {
   }
 
   return (
-    <div className="container" style={{ marginTop: 70, margin: "auto" }}>
+    <div className="container" style={{ width: "50rem" }}>
       <div className="row">
-        <div>
-          <img
-            className="image"
-            src={article.imageUrl}
-            alt={article.title}
-            // style={{ width: "100%", padding: 10 }}
-          />
-        </div>
-        <div className="col-9 mt-3">
+        <div className="col-11 mt-3 main">
           <h2 className="title">{article.title}</h2>
-          <h5>Author: {article.createdBy}</h5>
+          {/* <h5>Author: {article.createdBy}</h5> */}
           {article.createdAt && (
             <div className="date">
-              Posted on: {article.createdAt.toDate().toDateString()}
+              Posted on: {formatDate(article.createdAt)}
             </div>
           )}
-          <hr />
+          <div>
+            <img className="image" src={article.imageUrl} alt={article.title} />
+          </div>
+
           <p className="description"> {article.description}</p>
 
-          {/* Add comment form */}
-          <form onSubmit={handleSubmitComment}>
+          {/* <h5 className="comment-title">Add a Comment ({comments.length})</h5>
+          <hr
+            style={{
+              marginTop: "0px",
+              marginLeft: "-31.5rem",
+              width: "3rem",
+              border: "2px solid black",
+            }}
+          />
+          <form className="comment-form" onSubmit={handleSubmitComment}>
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
@@ -121,17 +128,33 @@ const Detail = () => {
               required
             />
             <button type="submit">Submit</button>
-          </form>
+          </form> */}
 
-          {/* Display comments */}
-          {comments.map((comment) => (
-            <div key={comment.id} className="comment">
-              <p className="comment-content">{comment.content}</p>
-              <p className="comment-timestamp">
-                {formatDate(comment.createdAt)}
-              </p>
+          <div className="comments-section">
+            <p className="comment-count">{comments.length} Comments</p>
+<hr/>
+            {comments.map((comment) => (
+              <div key={comment.id} className="comment">
+                {/* <p className="comment-title">Comment by: {comment.author}</p> */}
+                <p className="comment-content">{comment.content}</p>
+                <p className="comment-timestamp">
+                  {formatDate(comment.createdAt)}
+                </p>
+              </div>
+            ))}
+
+            <div className="comment-form">
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Leave a comment..."
+                rows={4}
+              />
+              <button type="submit" onClick={handleSubmitComment}>
+                Submit
+              </button>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

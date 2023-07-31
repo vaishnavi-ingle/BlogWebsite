@@ -1,11 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  justify-content: left;
+}
+
 .image {
-  margin: auto;
-  min-width: 55rem;
-  max-height: 15rem;
+  align-items: start;
+  padding: 1em;
+  margin-left: 8rem;
+  max-width: 45rem;
 }
 
 .title {
-  margin: 5rem 5rem 5px 20rem;
+  text-align: start;
+  padding: 1em;
 }
 
 .row {
@@ -13,21 +23,31 @@
 }
 
 .description {
-  margin: 5px -2rem 5px 12rem;
+  /* margin: 5px -2rem 5px 12rem; */
   text-align: justify;
+  /* margin: auto; */
+  /* padding: 1em; */
+  min-width: 42.5rem;
+  margin-left: 7.5rem;
+  line-height: 2;
+  margin-top: 1em;
 }
 
-hr {
-  margin: 5px -2rem 5px 12rem;
+/* hr {
+} */
+
+h5 {
+  font-weight: bold;
 }
 
-h5,
 h3 {
   margin: 5px -2rem 5px 12rem;
 }
 
 .date {
-  margin: 5px -2rem 5px 12rem;
+  text-align: left;
+  margin-left: -15rem;
+  /* padding: 1em; */
 }
 
 form textarea {
@@ -42,29 +62,78 @@ body {
   background-color: #f6f6f6;
 }
 
-button {
-  border: solid 3px #adc178;
-  border-radius: 55px;
-  padding: 10px 40px;
-  margin-left: 28rem;
-  display: list-item;
+/* comments */
+/* Comments */
+/* Comments */
+.comments-section {
+  margin: 2rem 0rem 0 6rem;
 }
 
-/* comments */
 .comment {
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 5px -3rem 5px 12rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.comment-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .comment-content {
   font-size: 16px;
-  margin-bottom: 5px;
+  color: #444;
+  line-height: 1.6;
 }
 
 .comment-timestamp {
   font-size: 12px;
   color: #666;
+  margin-top: 5px;
+}
+
+.comment-form {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.comment-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  /* min-height: 25px; */
+  resize: vertical;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  height: 3rem;
+}
+
+.comment-form button[type="submit"] {
+  background-color: #F45C43;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 30px;
+  border: none;
+  /* border-radius: 8px; */
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.comment-form button[type="submit"]:hover {
+  background-color: #EB3349;
+}
+
+.comment-count {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 1rem;
 }

@@ -4,6 +4,7 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 // import SearchBar from "../SearchBar";
+// import TrendingCategory from "../../pages/TrendingCategory";
 
 const Header = ({ active, setActive, user, handleLogOut }) => {
   const userId = user?.uid;
@@ -20,7 +21,7 @@ const Header = ({ active, setActive, user, handleLogOut }) => {
                 <Link to="/">Home</Link>
               </li>
               <li className="list">
-                <Link to="/trending">Trending</Link>
+                <Link to="/TrendingCategory">Trending</Link>
               </li>
               <li className="list">
                 <Link to="/news">News</Link>
@@ -37,7 +38,10 @@ const Header = ({ active, setActive, user, handleLogOut }) => {
           <div className="nav-container">
             <Link to="/Create">
               <ul>
-                <li style={{ paddingRight: "15px" }} className="new-blog">
+                <li
+                  style={{ paddingRight: "15px", color: "#fefae0" }}
+                  className="new-blog"
+                >
                   Create Blog
                 </li>
               </ul>
@@ -73,6 +77,7 @@ const Header = ({ active, setActive, user, handleLogOut }) => {
                       fontSize: "1.1rem",
                       paddingLeft: "10px",
                       marginLeft: "10px",
+                      color: "#fefae0",
                     }}
                   >
                     Logout
@@ -94,13 +99,13 @@ const Header = ({ active, setActive, user, handleLogOut }) => {
           </div>
         </nav>
       </header>
-      <div className="centered-h2">
+      {/* <div className="centered-h2">
         <h2 className="home">
           <span style={{ color: "#fdfcdc" }}>Read.</span>
           <span style={{ color: "#6c584c" }}>Share.</span>
           <span>Create.</span>
         </h2>
-      </div>
+      </div> */}
     </div>
   );
 };
